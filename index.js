@@ -1,17 +1,16 @@
-import { AppRegistry } from 'react-native';
+
 import React from 'react';
+import ReactDOM from'react-dom';
 import App from './App';
-import { name as appName } from './app.json';
-import { Provider } from 'react-redux';
+import * as serviceWorker from './serviceWorker';
+import {Provider} from 'react-redux'
+import store from './store';
 
-import configureStore from './store';
 
-const store = configureStore()
-
-const Index = () => (
-  <Provider store = { store }>
+ReactDOM.render(
+  <Provider store = {store}>
     <App />
-  </Provider>
-)
-
-AppRegistry.registerComponent(appName, () => Index);
+  </Provider>,
+  document.getElementById('root')
+);
+serviceWorker.unregister(); 
