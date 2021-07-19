@@ -22,50 +22,18 @@ import ProtectedRoute from "./src/utils/protectedroute";
 import SignIn from "./src/pages/signin/signin";
 import store from "./store";
 import { Home } from "./src/pages/home";
+import RootStack from './src/index'
 import { createBrowserHistory } from "history";
-
-
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const App = (props) => {
- 
-
-  const preLocationStatus = useSelector(state => state.router.location)
-
-  function isAuthenticated() {
-    if (
-      localStorage.getItem("access_token") &&
-      localStorage.getItem("refresh_token")
-    ) {
-      return true;
-    } else return false;
-  }
-
   return (
-    <NativeRouter>
-      <Switch>
-        <ProtectedRoute
-          // isAuthenticated={isAuthenticated()}
-
-          title="Login"
-          path={"/signin"}
-          // redirectTo={preLocationStatus?.pathname}
-          component={SignIn}
-        />
-
-        {routes.map(({ path, Component, title }) => (
-          <PrivateRoute
-            key={`title-${path}`}
-            title={title}
-            path={path}
-            isAuthenticated={isAuthenticated()}
-            component={Component}
-          />
-        ))}
-
-        <Home />
-      </Switch>
-    </NativeRouter>
+    <SafeAreaProvider>
+      <Provider store={store}>
+        <RootStack />
+      </Provider>
+    </SafeAreaProvider>
   );
-}
+};
 
 export default App;

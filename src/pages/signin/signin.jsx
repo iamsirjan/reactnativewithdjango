@@ -7,6 +7,7 @@ const SignIn = (props) => {
   const dispatch = useDispatch();
   const { control, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => {
+    console.log(data)
     dispatch(actions.createUser(data))
   }
 

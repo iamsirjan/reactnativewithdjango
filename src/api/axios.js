@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { clearToken, getBearerToken } from '../helper/helper';
 
-const baseUrl = '127.0.0.1:8000';
+const baseUrl = 'http://127.0.0.1:8000/';
 
 const axiosInstance = axios.create({
   baseURL: baseUrl,

@@ -16,8 +16,8 @@ import {
 export const Home = props => (
   
       <View>
-        <Link to="/">
-        <Text>hello</Text>
+        <Link to="/signin">
+        <Text>hello WhatsApp</Text>
         </Link>
       </View>
     

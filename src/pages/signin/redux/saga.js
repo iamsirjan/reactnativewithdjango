@@ -9,7 +9,7 @@ function* calladdUserReq(action) {
     try {
         let apiResponse = yield call( registerUser,action.payload);
         let {status} = apiResponse;
-        const message = 'Project added successfully';
+       
         yield put({
             type: actions.SEND_CREATEUSER_SUC,
             statusCode : status,
@@ -30,7 +30,7 @@ function* calladdUserReq(action) {
 }
 
 export function* createUser() {
-    yield takeEvery(actions.SEND_CREATEUSER_FAIL, calladdUserReq);
+    yield takeEvery(actions.SEND_CREATEUSER_REQ, calladdUserReq);
 }
 
 

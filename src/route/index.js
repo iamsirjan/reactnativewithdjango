@@ -8,6 +8,6 @@ const Home = React.lazy(() => import('../pages/home') );
 
 
 export const routes = [
-    {path:'/', Component:SignUp, title:'Signup'},
+    {path:'/signin', Component:SignUp, title:'Signup'},
     {path:'/home', Component:Home, title:"Home"}
 ];
