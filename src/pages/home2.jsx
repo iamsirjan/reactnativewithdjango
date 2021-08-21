@@ -13,12 +13,12 @@ import {
   StaticRouter,
   Link    
 } from "react-router-native";
-export const Home = props => (
+export const Home2 = props => (
   
       <View>
-       
-        <Text>hello WhatsApp</Text>
-        
+      
+        <Text>hello WhatsApp k cha</Text>
+     
       </View>
     
 );

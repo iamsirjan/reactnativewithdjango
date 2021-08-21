@@ -4,15 +4,15 @@ let localStorage;
 
 localStorage = window.localStorage;
 export function clearToken() {
-  localStorage.removeItem('access_token');
-  localStorage.removeItem('refresh_token');
+  localStorage.removeItem('access');
+  localStorage.removeItem('refresh');
 }
 
-function getTokenFromStorage(token = 'access_token') {
+function getTokenFromStorage(token = 'access') {
   return localStorage.getItem(token);
 }
 
-export function getToken(token = 'access_token') {
+export function getToken(token = 'access') {
   try {
     return getTokenFromStorage(token);
   } catch (err) {
